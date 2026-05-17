@@ -46,22 +46,50 @@ Frontend Core: Static optimization tree bundles delivered through Global Content
 ### Backend Infrastructure (FastAPI)
 Navigate to the root directory and establish a localized virtual environment:
 
-```bash
+``` Bash
 cd leia-mission-control
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 Configure your .env key mapping file:
 
-Bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 Frontend Dashboard (React + Vite)
 Open a separate terminal shell, navigate to the user interface directory,
 and initialize the Node dependencies:
 
-Bash
 npm install
 npm run dev
 The system will dynamically switch its communication broker profiles
 depending on your system environments (localhost:8000 or production endpoints).
+
+----
+
+## 🗺️ System Blueprint & Data Flow
++---------------------------------------------------------------------------------+
+|                               1. FRONTEND LAYER                                 |
+|   - Framework: React (Vite) + @react-three/fiber (Three.js WebGL binding)        |
+|   - Telemetry Loop: Event-driven state updates polling endpoints every 2000ms   |
+|   - Context Mapping: Transforms spherical Geo-data into 3D space vectors       |
++---------------------------------------------------------------------------------+
+                                      |         ^
+                 Axios HTTP Payload  |         |  JSON Hydration Stream
+                 (POST/GET Routes)   |         |  (3D Matrix / RAG Responses)
+                                      v         |
++---------------------------------------------------------------------------------+
+|                               2. BACKEND LAYER                                  |
+|   - Engine: FastAPI (Python) Asynchronous Server Core                           |
+|   - Security Layer: Custom CORSMiddleware handling sandbox/production origins   |
+|   - Network: Async client fetching telemetry maps from external space APIs     |
++---------------------------------------------------------------------------------+
+                                |                 |
+         SQLAlchemy ORM Model   |                 | Injected Prompt Structure 
+         Session Executions     |                 | (SQLite Context + User String)
+                                v                 v
++-------------------------------+   +---------------------------------------------+
+|    3. PERSISTENCE ENGINE      |   |             4. CO-PILOT ENGINE              |
+|   - DB: SQLite Binary Stack   |   |   - Ecosystem: google-genai SDK             |
+|   - Model: Mission Registry   |   |   - Neural Core: gemini-2.5-flash           |
+|   - Storage: Relational Logs  |   |   - Strategy: In-Memory RAG Engine          |
++-------------------------------+   +---------------------------------------------+
 
