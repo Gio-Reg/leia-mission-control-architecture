@@ -3,6 +3,13 @@
 A production-ready, full-stack 3D orbital visualization platform and autonomous telemetry assistant built for the **Vinterstellar** aerospace initiative. Leia interfaces directly with real-time tracking streams, logs mission coordinates into a relational persistent layer, and leverages a localized Retrieval-Augmented Generation (RAG) AI co-pilot.
 
 ---
+## 🖥️ Mission Interface Preview
+
+| Global Telemetry View | Data-Aware AI Agent Console |
+| --- | --- |
+| ![3D Orbital Canvas](./assets/telemetry-view.png) | ![Leia RAG Terminal](./assets/leia-console-view.png) |
+
+---
 
 ## 🛠️ System Architecture & Data Loop
 
