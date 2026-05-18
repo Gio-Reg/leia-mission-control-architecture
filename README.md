@@ -7,7 +7,7 @@ A production-ready, full-stack 3D orbital visualization platform and autonomous 
 
 | Global Telemetry View | Data-Aware AI Agent Console |
 | --- | --- |
-| ![3D Orbital Canvas](./assets/telemetry-view.png) | ![Leia RAG Terminal](./assets/leia-console-view.png) |
+| ![3D Orbital Canvas](./assets/telemetry-view.png) | ![Leia RAG Terminal](./assets/Leia_prompt_trajectory.png) | ![Leia RAG Terminal](./assets/leia-console-view.png) |
 
 ---
 
