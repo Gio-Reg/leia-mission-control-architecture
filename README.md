@@ -26,6 +26,8 @@ The ecosystem relies on three independent layers containerized for scale:
 - **Real-Time Telemetry Synchronization:** Asynchronous pooling hooks stream active positional metrics from the International Space Station (ISS).
 - **Dynamic 3D Orthogonal Mapping:** Interactive WebGL viewport displaying satellite orbits, dynamic atmosphere scaling, and telemetry path retention.
 - **Relational Session Ledger:** One-click coordinate snapshot logging into a secure localized SQLite runtime database.
+- **Space Situational Awareness (SSA) Simulation Engine:** On-demand generation of synthetic orbital cascade scenarios executing dynamic secondary collision tracking and non-linear decay curves.
+- **Physics-Informed AI Weights Inference:** Pre-trained and calibrated neural network hidden layers configured to calculate sub-50ms spatiotemporal intensity vectors without falling back to static numerical safe-modes.
 - **Context-Aware AI Co-Pilot (RAG):** An integrated Gemini agent capable of reading active database schemas to calculate data properties, explain mission parameters, and analyze log trends.
 
 ---
@@ -74,29 +76,28 @@ depending on your system environments (localhost:8000 or production endpoints).
 
 ## 🗺️ System Blueprint & Data Flow
 +---------------------------------------------------------------------------------+
-|                               1. FRONTEND LAYER                                 |
-|   - Framework: React (Vite) + @react-three/fiber (Three.js WebGL binding)        |
-|   - Telemetry Loop: Event-driven state updates polling endpoints every 2000ms   |
-|   - Context Mapping: Transforms spherical Geo-data into 3D space vectors       |
+|                               1. FRONTEND LAYER                                 |
+|   - Framework: React (Vite) + @react-three/fiber (Three.js WebGL binding)        |
+|   - Telemetry Loop: Event-driven state updates polling endpoints every 2000ms   |
+|   - Context Mapping: Transforms spherical Geo-data into 3D space vectors       |
 +---------------------------------------------------------------------------------+
-                                      |         ^
-                 Axios HTTP Payload  |         |  JSON Hydration Stream
-                 (POST/GET Routes)   |         |  (3D Matrix / RAG Responses)
-                                      v         |
+                                      |         ^
+                 Axios HTTP Payload  |         |  JSON Hydration Stream
+                 (POST/GET Routes)   |         |  (3D Matrix / RAG Responses)
+                                      v         |
 +---------------------------------------------------------------------------------+
-|                               2. BACKEND LAYER                                  |
-|   - Engine: FastAPI (Python) Asynchronous Server Core                           |
-|   - Security Layer: Custom CORSMiddleware handling sandbox/production origins   |
-|   - Network: Async client fetching telemetry maps from external space APIs     |
+|                               2. BACKEND LAYER                                  |
+|   - Engine: FastAPI (Python) Asynchronous Server Core                           |
+|   - Security Layer: Custom CORSMiddleware handling sandbox/production origins   |
+|   - Network: Async client fetching telemetry maps from external space APIs     |
 +---------------------------------------------------------------------------------+
-                                |                 |
-         SQLAlchemy ORM Model   |                 | Injected Prompt Structure 
-         Session Executions     |                 | (SQLite Context + User String)
-                                v                 v
-+-------------------------------+   +---------------------------------------------+
-|    3. PERSISTENCE ENGINE      |   |             4. CO-PILOT ENGINE              |
-|   - DB: SQLite Binary Stack   |   |   - Ecosystem: google-genai SDK             |
-|   - Model: Mission Registry   |   |   - Neural Core: gemini-2.5-flash           |
-|   - Storage: Relational Logs  |   |   - Strategy: In-Memory RAG Engine          |
-+-------------------------------+   +---------------------------------------------+
-
+                                |                 |
+         SQLAlchemy ORM Model   |                 | Injected Prompt Structure 
+         Session Executions     |                 | (SQLite Context + User String)
+                                v                 v
++-------------------------------+   +---------------------------------------------+
+|    3. PERSISTENCE ENGINE      |   |             4. CO-PILOT ENGINE              |
+|   - DB: SQLite Binary Stack   |   |   - Ecosystem: google-genai SDK             |
+|   - Model: Mission Registry   |   |   - Neural Core: gemini-2.5-flash           |
+|   - Storage: Relational Logs  |   |   - Strategy: In-Memory RAG Engine          |
++-------------------------------+   +---------------------------------------------+
